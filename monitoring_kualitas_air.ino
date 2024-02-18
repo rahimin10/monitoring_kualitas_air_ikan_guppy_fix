@@ -28,16 +28,16 @@ String months[12]={"Januari", "Februari", "Maret", "April", "Mai", "Juni", "Juli
 
 // deklarasi variabel-variael logika fuzzy
 // deklarasi Keanggotaan himpunan suhu
-float suhuDingin[] = {26, 29};     // <26, 26, 29
-float suhuNetral[] = {26, 29, 32}; // 26, 29, 32
-float suhuPanas[] = {29, 32};      // 29, 29, 32>
+float suhuDingin[] = {28, 29};     // <28, 28, 29
+float suhuNetral[] = {28, 29, 30}; // 28, 29, 30
+float suhuPanas[] = {29, 30};      // 29, 29, 30>
 // deklarasi Keanggotaan himpunan pH
 float pHAsam[] = {6, 7};      // <6, 6, 7
 float pHNetral[] = {6, 7, 8}; // 6, 7, 8
 float pHBasa[] = {7, 8};      // 7, 8, 8>
 // deklarasi Keanggotaan himpunan output Kualitas Air
-float kuairBuruk[] = {5, 12};  // <5, 10
-float kuairBaik[] = {5, 12}; // 5, 10>
+float kuairBuruk[] = {0, 1};  // <0, 1
+float kuairBaik[] = {0, 1}; // 0, 1>
 
 // deklarasi variabel derajat keanggotaan suhu
 float MUsuhuDin, MUsuhuNet, MUsuhuPan; 
@@ -254,7 +254,7 @@ void loop()
   lcd.print("AIR   : "); // kondisi kualitas air
 
   // mengirim notifikasi ke blynk sesuai nilai fuzzy
-  if(OutputKuair >= 7)
+  if(OutputKuair >= 0.5 )
   {   
     lcd.setCursor(8,1); 
     lcd.print("BAIK"); 
